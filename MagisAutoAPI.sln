@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37614.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagisAutoAPI", "MagisAutoAPI\MagisAutoAPI.csproj", "{E7160311-27B7-42A2-988A-BFFF7FCB0DDF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{834AF149-EA73-49EE-89FC-8059EE568428} = {834AF149-EA73-49EE-89FC-8059EE568428}
+		{C9E4D03A-22FA-45D3-A991-9A519ABC614B} = {C9E4D03A-22FA-45D3-A991-9A519ABC614B}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagisAuto.Domain", "MagisAuto.Domain\MagisAuto.Domain.csproj", "{B0357CE9-E21A-4871-A9C5-4F9CE80DE1F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagisAuto.Application", "MagisAuto.Application\MagisAuto.Application.csproj", "{834AF149-EA73-49EE-89FC-8059EE568428}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B0357CE9-E21A-4871-A9C5-4F9CE80DE1F6} = {B0357CE9-E21A-4871-A9C5-4F9CE80DE1F6}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagisAuto.Infrastructure", "MagisAuto.Infrastructure\MagisAuto.Infrastructure.csproj", "{C9E4D03A-22FA-45D3-A991-9A519ABC614B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{834AF149-EA73-49EE-89FC-8059EE568428} = {834AF149-EA73-49EE-89FC-8059EE568428}
+		{B0357CE9-E21A-4871-A9C5-4F9CE80DE1F6} = {B0357CE9-E21A-4871-A9C5-4F9CE80DE1F6}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7160311-27B7-42A2-988A-BFFF7FCB0DDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7160311-27B7-42A2-988A-BFFF7FCB0DDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7160311-27B7-42A2-988A-BFFF7FCB0DDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7160311-27B7-42A2-988A-BFFF7FCB0DDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0357CE9-E21A-4871-A9C5-4F9CE80DE1F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0357CE9-E21A-4871-A9C5-4F9CE80DE1F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0357CE9-E21A-4871-A9C5-4F9CE80DE1F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0357CE9-E21A-4871-A9C5-4F9CE80DE1F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{834AF149-EA73-49EE-89FC-8059EE568428}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{834AF149-EA73-49EE-89FC-8059EE568428}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{834AF149-EA73-49EE-89FC-8059EE568428}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{834AF149-EA73-49EE-89FC-8059EE568428}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9E4D03A-22FA-45D3-A991-9A519ABC614B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9E4D03A-22FA-45D3-A991-9A519ABC614B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9E4D03A-22FA-45D3-A991-9A519ABC614B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9E4D03A-22FA-45D3-A991-9A519ABC614B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6EB375A8-8F2A-49BC-B73F-555EFE2E5845}
+	EndGlobalSection
+EndGlobal

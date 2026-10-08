@@ -1,0 +1,32 @@
+﻿# Compilaciones de .NET
+**/bin/
+**/obj/
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# IDEs
+.vscode/
+.idea/
+
+# Pruebas y archivos temporales
+TestResults/
+*.cache
+*.log
+
+# Paquetes generados
+packages/
+
+# Configuración local y secretos
+**/appsettings.Development.json
+**/appsettings.Local.json
+**/secrets.json
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini

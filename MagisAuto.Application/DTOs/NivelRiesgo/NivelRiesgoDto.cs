@@ -1,0 +1,8 @@
+namespace MagisAuto.Application.DTOs.NivelRiesgo;
+
+public class NivelRiesgoDto
+{
+    public int NivelRiesgoId { get; set; }
+    public string Nombre { get; set; } = string.Empty;
+    public bool RequiereFiador { get; set; }
+}
