@@ -8,8 +8,13 @@ public class ActualizarPersonaValidator : AbstractValidator<ActualizarPersonaDto
     public ActualizarPersonaValidator()
     {
         RuleFor(x => x.NIT)
-            .NotEmpty()
-            .MaximumLength(20);
+            .MaximumLength(20)
+            .When(x => !string.IsNullOrWhiteSpace(x.NIT));
+
+        RuleFor(x => x.NIT)
+            .Matches(@"^[0-9]{1,12}-?[0-9Kk]$")
+            .WithMessage("El NIT debe tener un formato válido.")
+            .When(x => !string.IsNullOrWhiteSpace(x.NIT));
 
         RuleFor(x => x.DPI)
             .NotEmpty()

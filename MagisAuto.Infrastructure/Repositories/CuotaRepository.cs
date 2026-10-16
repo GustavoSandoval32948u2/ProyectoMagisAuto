@@ -130,18 +130,45 @@ public class CuotaRepository : ICuotaRepository
     {
         return new CuotaDto
         {
-            CuotaId = reader.GetInt32(reader.GetOrdinal("CuotaId")),
-            CreditoId = reader.GetInt32(reader.GetOrdinal("CreditoId")),
-            NumeroCuota = reader.GetInt32(reader.GetOrdinal("NumeroCuota")),
+            CuotaId = reader.GetInt32(
+                reader.GetOrdinal("CuotaId")),
+
+            CreditoId = reader.GetInt32(
+                reader.GetOrdinal("CreditoId")),
+
+            NumeroCuota = reader.GetInt32(
+                reader.GetOrdinal("NumeroCuota")),
+
             FechaVencimiento = DateOnly.FromDateTime(
-                reader.GetDateTime(reader.GetOrdinal("FechaVencimiento"))),
-            MontoCapital = reader.GetDecimal(reader.GetOrdinal("MontoCapital")),
-            MontoInteres = reader.GetDecimal(reader.GetOrdinal("MontoInteres")),
-            MontoManejoCuenta = reader.GetDecimal(reader.GetOrdinal("MontoManejoCuenta")),
-            MontoSeguroVehiculo = reader.GetDecimal(reader.GetOrdinal("MontoSeguroVehiculo")),
-            MontoSeguroVida = reader.GetDecimal(reader.GetOrdinal("MontoSeguroVida")),
-            MontoTotal = reader.GetDecimal(reader.GetOrdinal("MontoTotal")),
-            EstadoCuotaId = reader.GetInt32(reader.GetOrdinal("EstadoCuotaId"))
+                reader.GetDateTime(
+                    reader.GetOrdinal("FechaVencimiento"))),
+
+            MontoCapital = reader.GetDecimal(
+                reader.GetOrdinal("MontoCapital")),
+
+            MontoInteres = reader.GetDecimal(
+                reader.GetOrdinal("MontoInteres")),
+
+            MontoManejoCuenta = reader.GetDecimal(
+                reader.GetOrdinal("MontoManejoCuenta")),
+
+            MontoSeguroVehiculo = reader.GetDecimal(
+                reader.GetOrdinal("MontoSeguroVehiculo")),
+
+            MontoSeguroVida = reader.GetDecimal(
+                reader.GetOrdinal("MontoSeguroVida")),
+
+            MontoTotal = reader.GetDecimal(
+                reader.GetOrdinal("MontoTotal")),
+
+            EstadoCuotaId = reader.GetInt32(
+                reader.GetOrdinal("EstadoCuotaId")),
+
+            EstadoCuota = reader.GetString(
+                reader.GetOrdinal("EstadoCuota")),
+
+            TotalPagado = reader.GetDecimal(
+                reader.GetOrdinal("TotalPagado"))
         };
     }
 }

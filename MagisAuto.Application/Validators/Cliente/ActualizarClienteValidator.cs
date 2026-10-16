@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FluentValidation;
 using MagisAuto.Application.DTOs.Cliente;
+using MagisAuto.Application.Validators.Validaciones;
 
 namespace MagisAuto.Application.Validators.Cliente
 {
@@ -14,11 +15,17 @@ namespace MagisAuto.Application.Validators.Cliente
         {
             RuleFor(x => x.Nit)
                 .NotEmpty()
-                .MaximumLength(20);
+                .WithMessage("El NIT es obligatorio.")
+                .Must(ValidadorNitGuatemala.EsValido)
+                .WithMessage("El NIT no tiene un formato o dígito verificador válido.");
 
             RuleFor(x => x.Dpi)
                 .NotEmpty()
-                .MaximumLength(20);
+                .WithMessage("El DPI es obligatorio.")
+                .Length(13)
+                .WithMessage("El DPI debe tener exactamente 13 dígitos.")
+                .Matches(@"^\d+$")
+                .WithMessage("El DPI solo debe contener números.");
 
             RuleFor(x => x.NombreCompleto)
                 .NotEmpty()

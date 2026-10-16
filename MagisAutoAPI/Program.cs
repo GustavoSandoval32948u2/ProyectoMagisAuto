@@ -36,6 +36,7 @@ using MagisAuto.Application.Services;
 using MagisAuto.Application.Validators.Cliente;
 using MagisAuto.Infrastructure.Data;
 using MagisAuto.Infrastructure.Repositories;
+using MagisAutoAPI.Filters;
 using MagisAutoAPI.Middleware;
 using Microsoft.Data.SqlClient;
 
@@ -49,7 +50,12 @@ namespace MagisAutoAPI
 
             // Add services to the container.
 
-            builder.Services.AddControllers();
+            builder.Services.AddScoped<FluentValidationFilter>();
+
+            builder.Services.AddControllers(options =>
+            {
+                options.Filters.AddService<FluentValidationFilter>();
+            });
 
             builder.Services.AddScoped<SqlConnectionFactory>();
             builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
@@ -125,6 +131,17 @@ namespace MagisAutoAPI
 
             builder.Services.AddValidatorsFromAssemblyContaining<CrearClienteValidator>();
 
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("MagisFrontend", policy =>
+                {
+                    policy
+                        .WithOrigins("http://localhost:5173")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                });
+            });
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -135,6 +152,8 @@ namespace MagisAutoAPI
             }
 
             app.UseHttpsRedirection();
+
+            app.UseCors("MagisFrontend");
 
             app.UseMiddleware<ExceptionMiddleware>();
 

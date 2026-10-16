@@ -1,5 +1,6 @@
 using FluentValidation;
 using MagisAuto.Application.DTOs.Concesionaria;
+using MagisAuto.Application.Validators.Validaciones;
 
 namespace MagisAuto.Application.Validators.Concesionaria;
 
@@ -13,7 +14,9 @@ public class ActualizarConcesionariaValidator
             .MaximumLength(150);
 
         RuleFor(x => x.NIT)
-            .MaximumLength(20)
-            .When(x => !string.IsNullOrWhiteSpace(x.NIT));
+            .NotEmpty()
+            .WithMessage("El NIT es obligatorio.")
+            .Must(ValidadorNitGuatemala.EsValido)
+            .WithMessage("El NIT no tiene un formato o dígito verificador válido.");
     }
 }
